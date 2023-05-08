@@ -1,5 +1,7 @@
 class Solution:
-    def findDifference(self, nums1: List[int], nums2: List[int]) -> List[List[int]]:
+    def findDifference(self, nums1: set[int], nums2: set[int]) -> List[List[int]]:
+        nums1=set(nums1)
+        nums2=set(nums2)
         k=[[],[]]
         for i in nums1:
             if i not in nums2:
@@ -7,6 +9,5 @@ class Solution:
         for j in nums2:    
             if j not in nums1:
                 k[1].append(j)
-        k[0]=list(set(k[0]))
-        k[1]=list(set(k[1]))
+        
         return k     
