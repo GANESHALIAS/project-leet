@@ -3,12 +3,10 @@ class Solution:
         
     def evalRPN(self, tokens: List[str]) -> int:
         operand=[]
-        operator=[]
         for i in tokens:
             if i.isnumeric():
                 operand.append(i)
             else:
-                
                 if i == "+":
                     s=operand.pop()
                     f=operand.pop()
@@ -31,9 +29,7 @@ class Solution:
                     k=int(eval(k))
                 else:
                     k= i
-                
                 operand.append(str(k))
-            
         return int(operand.pop())
     
     
