@@ -1,19 +1,17 @@
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         ans = []
-        ds = []
-
-
-        def findCombination(ind: int, target: int):
+        st = []
+        def getcombination(ind,target):
+            if target == 0:
+                ans.append(st[:])
+                return
             if ind == len(candidates):
                 return
-            if target == 0:
-                ans.append(ds[:])
-                return
-            if candidates[ind] <= target:
-                ds.append(candidates[ind])
-                findCombination(ind, target - candidates[ind])
-                ds.pop()
-            findCombination(ind + 1, target)
-        findCombination(0, target)
+            if candidates[ind]<=target:
+                st.append(candidates[ind])
+                getcombination(ind,target-candidates[ind])
+                st.pop()
+            getcombination(ind+1,target)
+        getcombination(0,target)
         return ans
