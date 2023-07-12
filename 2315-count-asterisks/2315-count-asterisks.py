@@ -6,8 +6,7 @@ class Solution:
         for i in s:
             if i == "|":
                 count+=1
-            elif count%2==0:
-                if i == "*":
-                    ans+=1
+            elif count%2==0 and i == "*":
+                ans+=1
         return ans
         
