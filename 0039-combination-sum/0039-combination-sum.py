@@ -6,8 +6,9 @@ class Solution:
 
         def findCombination(ind: int, target: int):
             if ind == len(candidates):
-                if target == 0:
-                    ans.append(ds[:])
+                return
+            if target == 0:
+                ans.append(ds[:])
                 return
             if candidates[ind] <= target:
                 ds.append(candidates[ind])
