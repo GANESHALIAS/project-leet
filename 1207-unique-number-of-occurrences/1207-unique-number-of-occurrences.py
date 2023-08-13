@@ -5,7 +5,5 @@ class Solution:
         ans=[]
         for i in c:
             ans.append(c[i])
-        if len(ans) == len(set(ans)):
-            return True
-        else:
-            return False
+        return len(ans) == len(set(ans))
+            
