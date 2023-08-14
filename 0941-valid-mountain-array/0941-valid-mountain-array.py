@@ -7,10 +7,8 @@ class Solution:
         i=1
         while i <= max_i:
             if arr[i] <= arr[i-1]:
-                print("w1",i)
                 return False
             i+=1
-        print("end1")
         i=max_i+1
         while i<len(arr):
             if arr[i] >= arr[i-1]:
