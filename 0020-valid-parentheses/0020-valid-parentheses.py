@@ -1,10 +1,10 @@
 class Solution:
     def isValid(self, s: str) -> bool:
         store={"(":")","{":"}","[":"]"}
-        k=[]
+        ans=[]
         for i in s:
             if i in store:
-                k.append(i)
-            elif len(k) == 0 or store[k.pop()] != i:
+                ans.append(i)
+            elif len(ans) == 0 or store[ans.pop()] != i:
                 return False
-        return len(k)==0
+        return len(ans)==0
